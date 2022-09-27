@@ -1,0 +1,10 @@
+.menuButton {
+  position: relative;
+  height: 30px;
+  transition-duration: .4s;
+
+  &:hover {
+    transition-delay: 0s;
+    margin-right: 10px;
+  }
+}

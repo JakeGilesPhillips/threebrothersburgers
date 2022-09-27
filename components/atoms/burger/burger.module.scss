@@ -1,0 +1,62 @@
+#burger {
+  position: relative;
+  top: -4px;
+  height: 50px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  .burgerTop,
+  .burgerBottom,
+  .burgerFadeIn {
+    position: relative;
+    transition: .4s;
+  }
+
+  .burgerTop {
+    top: 0px;
+  }
+
+  .burgerBottom {
+    bottom: 6px;
+  }
+
+  .burgerFadeIn {
+    opacity: 0.0;
+  }
+
+  .burgerText {
+    color: white;
+  }
+
+  &:hover {
+    .burgerTop {
+      top: -2.5px;
+    }
+
+    .burgerBottom {
+      bottom: 4px;
+    }
+  }
+
+  &.open {
+    .burgerTop {
+      top: 12px;
+    }
+
+    .burgerText {
+      opacity: 0.0;
+    }
+
+    .burgerBottom {
+      opacity: 0.0;
+      bottom: 0px;
+    }
+
+    .burgerFadeIn {
+      opacity: 1.0;
+    }
+  }
+}

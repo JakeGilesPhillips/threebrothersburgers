@@ -2,16 +2,15 @@
 import Head from "next/head";
 import type { NextPage } from "next";
 
-import Content from "../components/molecules/content/content";
-import Footer from "../components/organisms/footer/footer";
-import Header from "../components/organisms/header/header";
-import HomeContent from "../components/templates/homeContent/homeContent";
+import Content from "../../components/molecules/content/content";
+import Header from "../../components/organisms/header/header";
+import AboutContent from "../../components/templates/aboutContent/aboutContent";
 
-const Home: NextPage = () => {
+const About: NextPage = () => {
 	return (
 		<main>
 			<Head>
-				<title>Three Brothers Burgers</title>
+				<title>Three Brothers Burgers | About</title>
 				<meta
 					name="description"
 					content="Three Brothers Burgers is fast becoming one of the best Burger destinations in Bristol - based on the Bristol harbourside we're open 7 days a week."
@@ -22,15 +21,14 @@ const Home: NextPage = () => {
 			<Header />
 			<Content
 				fixed
-				alignItems="center"
+				alignItems="flex-start"
 				justifyContent="center"
 				background="/images/restaurant/exterior_2.jpeg"
 			>
-				<HomeContent />
-				<Footer />
+				<AboutContent />
 			</Content>
 		</main>
 	);
 };
 
-export default Home;
+export default About;

@@ -1,0 +1,14 @@
+@use '~/styles/variables';
+
+.content {
+  flex: 1;
+  display: flex;
+  filter: brightness(0.8);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  overflow: scroll;
+
+  padding: variables.$headerHeight 0;
+}

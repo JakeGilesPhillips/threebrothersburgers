@@ -1,0 +1,9 @@
+@use '~/styles/variables';
+
+.menu {
+  position: fixed;
+  top: calc(variables.$headerHeight - 20px);
+  right: 0;
+  width: 300px;
+  padding-right: variables.$spacing_l;
+}
