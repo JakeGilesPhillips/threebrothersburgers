@@ -5,6 +5,7 @@ export interface IButtonProps {
 	color?: string;
 	animated?: boolean;
 	bordered?: boolean;
+	solid?: boolean;
 	size?: Size;
 	onClick?: () => void;
 }

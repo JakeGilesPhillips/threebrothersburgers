@@ -11,7 +11,8 @@ const Button = (props: PropsWithChildren<IButtonProps>) => {
 		color = "white",
 		size = Size.L,
 		animated = false,
-		bordered = true,
+		bordered = false,
+		solid = false,
 		onClick = () => null,
 		children,
 	} = props;
@@ -21,10 +22,7 @@ const Button = (props: PropsWithChildren<IButtonProps>) => {
 	}, [size]);
 
 	const _border: CSSProperties = useMemo(() => {
-		return {
-			borderWidth: bordered ? `1px` : `0px`,
-			padding: bordered ? `8px` : 0,
-		};
+		return { borderWidth: bordered ? `1px` : `0px` };
 	}, [bordered]);
 
 	return (
@@ -35,6 +33,7 @@ const Button = (props: PropsWithChildren<IButtonProps>) => {
 		>
 			{animated && <div className={styles.buttonHover} />}
 			{label && <span className={styles.buttonLabel}>{label}</span>}
+			{solid && <div className={styles.buttonBack} />}
 			{children}
 		</div>
 	);

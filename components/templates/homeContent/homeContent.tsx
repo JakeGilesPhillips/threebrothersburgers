@@ -8,7 +8,12 @@ const HomeContent = () => {
 	return (
 		<Padded>
 			<Column alignItems="center" justifyContent="center">
-				<Button label="MAKE A BOOKING" size={Size.XL} animated />
+				<Button
+					label="MAKE A BOOKING"
+					size={Size.XL}
+					animated
+					bordered
+				/>
 			</Column>
 		</Padded>
 	);

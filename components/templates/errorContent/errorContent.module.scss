@@ -1,0 +1,36 @@
+@use '~/styles/variables';
+
+.errorContent {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: variables.$red;
+
+  .errorContentBackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/pattern.png');
+    background-repeat: repeat;
+    background-size: 400px;
+    opacity: 0.25;
+  }
+
+  .errorContentWrapper {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+    color: white;
+
+    .errorText {
+      padding: 10px 0;
+      font-size: 16pt;
+    }
+  }
+}
