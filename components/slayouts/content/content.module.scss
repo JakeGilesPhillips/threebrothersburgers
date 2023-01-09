@@ -1,0 +1,10 @@
+@use '~/styles/variables';
+
+.content {
+  position: relative;
+  max-width: 1080px;
+  padding: 0 variables.$spacing_l;
+
+  display: flex;
+  flex: 1;
+}
