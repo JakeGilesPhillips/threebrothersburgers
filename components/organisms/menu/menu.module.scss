@@ -1,9 +1,14 @@
 @use '~/styles/variables';
 
 .menu {
-  position: fixed;
-  top: calc(variables.$headerHeight - 20px);
+  position: absolute;
+  top: calc(variables.$headerHeight / 1.8);
   right: 0;
   width: 300px;
-  padding-right: variables.$spacing_l;
+  padding-right: variables.$spacing_s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 }

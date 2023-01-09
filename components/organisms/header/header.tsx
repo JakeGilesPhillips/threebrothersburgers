@@ -1,24 +1,32 @@
-import Row from "../../atoms/row/row";
-import Logo from "../../atoms/logo/logo";
-import Burger from "../../atoms/burger/burger";
-import Padded from "../../atoms/padded/padded";
-import Menu from "../../organisms/menu/menu";
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../../../providers/storeProvider/storeProvider';
 
-import styles from "./header.module.scss";
+import Row from '../../slayouts/row/row';
+import Content from '../../slayouts/content/content';
+
+import Logo from '../../atoms/logo/logo';
+import Burger from '../../atoms/burger/burger';
+import Menu from '../../organisms/menu/menu';
+
+import styles from './header.module.scss';
 
 const Header = () => {
-	return (
-		<div id={styles.header}>
-			<Padded>
-				<Row alignItems="center" justifyContent="space-between">
-					<Logo />
-					<Burger />
-				</Row>
-			</Padded>
+  const { uiStore } = useStore();
+  const { threshold, scrollHeight } = uiStore;
 
-			<Menu />
-		</div>
-	);
+  const small = scrollHeight > threshold;
+
+  return (
+    <div id={styles.header} className={small ? styles.small : ''}>
+      <Content>
+        <Row alignItems="center" justifyContent="space-between">
+          <Logo small={small} />
+          <Burger />
+        </Row>
+        <Menu />
+      </Content>
+    </div>
+  );
 };
 
-export default Header;
+export default observer(Header);

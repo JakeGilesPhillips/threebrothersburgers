@@ -1,9 +1,14 @@
-.logo {
+#logo {
   font-weight: 500;
   color: white;
   font-size: 25pt;
   letter-spacing: 0.2px;
+  transition: .4s;
   cursor: pointer;
+
+  &.small {
+    font-size: 20pt;
+  }
 
   .light {
     font-weight: 300;

@@ -1,39 +1,37 @@
-import { RiFacebookCircleLine, RiTwitterLine } from "react-icons/ri";
+import { observer } from 'mobx-react-lite';
+import { RiFacebookCircleLine, RiTwitterLine } from 'react-icons/ri';
+import { useStore } from '../../../providers/storeProvider/storeProvider';
 
-import Column from "../../atoms/column/column";
-import Padded from "../../atoms/padded/padded";
-import Row from "../../atoms/row/row";
+import Column from '../../slayouts/column/column';
+import Content from '../../slayouts/content/content';
+import Row from '../../slayouts/row/row';
 
-import styles from "./footer.module.scss";
+import styles from './footer.module.scss';
 
 const Footer = () => {
-	return (
-		<footer id={styles.footer}>
-			<Padded>
-				<Row alignItems="flex-end">
-					<Column alignItems="flex-start" justifyContent="flex-end">
-						<span>Three Brothers Burgers</span>
-						<span>Welsh Back</span>
-						<span>Bristol, BS1 4SB</span>
-					</Column>
-					{/* <Column alignItems="center" justifyContent="center">
-						<Row>
-							<span>
-								<RiFacebookCircleLine />
-							</span>
-							<span>
-								<RiTwitterLine />
-							</span>
-						</Row>
-					</Column> */}
-					<Column alignItems="flex-end" justifyContent="flex-end">
-						<span>01179 277050</span>
-						<span>info@threebrothersburgers.co.uk</span>
-					</Column>
-				</Row>
-			</Padded>
-		</footer>
-	);
+  const { uiStore } = useStore();
+  const { threshold, pageHeight, scrollHeight } = uiStore;
+
+  const showFooter = scrollHeight < threshold || scrollHeight > pageHeight - threshold;
+
+  return (
+    <footer id={styles.footer} className={showFooter ? styles.show : ''}>
+      <Content>
+        <Row alignItems="flex-end">
+          <Column>
+            <span>Three Brothers Burgers</span>
+            <span>Aboard Spyglass</span>
+            <span>Welsh Back</span>
+            <span>Bristol, BS1 4SB</span>
+          </Column>
+          <Column alignItems="flex-end">
+            <span>01179 277050</span>
+            <span>info@threebrothersburgers.co.uk</span>
+          </Column>
+        </Row>
+      </Content>
+    </footer>
+  );
 };
 
-export default Footer;
+export default observer(Footer);

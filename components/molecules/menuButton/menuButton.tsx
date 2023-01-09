@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
-import { observer } from "mobx-react-lite";
 import { useRouter } from "next/router";
+import { observer } from "mobx-react-lite";
 import { CSSProperties, useMemo } from "react";
+
+import { useStore } from "../../../providers/storeProvider/storeProvider";
 import { IButtonProps } from "../../../variables/models";
+
 import Button from "../../atoms/button/button";
-import { useStore } from "../../organisms/storeProvider/storeProvider";
 import styles from "./menuButton.module.scss";
 
 interface MenuButtonProps extends IButtonProps {

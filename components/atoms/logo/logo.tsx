@@ -1,15 +1,22 @@
-import styles from "./logo.module.scss";
+import { observer } from 'mobx-react-lite';
+import styles from './logo.module.scss';
 
-const Logo = () => {
-	const onClick = () => {
-		window.location.href = "/";
-	};
+interface LogoProps {
+  small?: boolean;
+}
 
-	return (
-		<span className={styles.logo} onClick={onClick}>
-			THREE BROTHERS <span className={styles.light}>BURGERS</span>
-		</span>
-	);
+const Logo = (props: LogoProps) => {
+  const { small } = props;
+
+  const onClick = () => {
+    window.location.href = '/';
+  };
+
+  return (
+    <span id={styles.logo} className={small ? styles.small : ''} onClick={onClick}>
+      THREE BROTHERS <span className={styles.light}>BURGERS</span>
+    </span>
+  );
 };
 
-export default Logo;
+export default observer(Logo);
